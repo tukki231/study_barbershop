@@ -3,23 +3,145 @@
 <!-- Хрусталева Натаья tukki231@yandex.ru -->
 <html lang="ru">
   <head>
-  	<!--Код из видеоурока, для примера правильной разметки -->
+  	<!-- Код из видеоурока, для примера правильной разметки -->
     <meta charset="utf-8">
     <title>Барбершоп "Бородинский"</title> 
   </head>
   <body>
     <header class="main-header">
-    	<!-- Это контейнер. Блок, который зацентрует содержимое. На макете видно, что содержимое в шапке центруется по отношению ко всей странице. Содержимое основного контента тоже центруется. И в подвале содержимое центруется. -->
+			<!-- Это контейнер. Блок, который зацентрует содержимое. 
+				На макете видно, что содержимое в шапке центруется по отношению ко всей странице. 
+				Содержимое основного контента тоже центруется. И в подвале содержимое центруется. -->
     	<div class="container">
     	  <!-- Контейнер для основного меню в шапке -->
     	  <nav class="main-navigation">
-    		
+					<ul>
+						<li>
+							<a href="#">Информация</a>
+						</li>
+						<li>
+							<a href="#">Новости</a>
+						</li>
+						<li>
+							<a href="#">Прайс-лист</a>
+						</li>
+						<li>
+							<a href="#">Магазин</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
     	  </nav>
     	  <!-- Меню вход -->
     	  <div class="user-block">
-    	  	
+    	  	<a clas="login" href="#">Вход</a>
     	  </div>	
     	</div>
-    </header>	
+		</header>	
+		<!-- Блок основного содержания (все, что между шапкой и подвалом) 
+		К main можно не довавляьб никаких классов, т.к. он всегда один на странице.
+		Здесь к main добавили класс container т.к. блок основного содержания и подвала 
+		так же  должны центроваться как и меню в шапке. -->
+		<main class="container">
+			<!-- контейнер для логотипа -->
+			<div class="index-logo">
+				<!-- Тег img подназначен для разменки содержательных изображений. 
+				Изображение является содержательным, если при его удалении со страницы будет чего-то нехватать. -->
+				<img src="img/imdex-logo.png" width="368" height="204" alt="Барбершоп «Бородинский»">
+			</div>
+			<section class="features">
+				<div class="feattues-item">
+					<b class="features-name">Быстро</b>
+					<p>Мы делаем свою работу быстро! Два часа пролетят незаметно и вы счастливый обладатель стильной стрижки-минутки!</p>
+				</div>
+				<div class="feattues-item">
+					<b class="features-name">Круто</b>
+					<p>Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино! Во всяком случае внешне.</p>
+				</div>
+				<div class="feattues-item">
+					<b class="features-name">Дорого</b>
+					<p>Наши мастера - профессионалы своего дела и не могут стоить дешево. К тому же, разве цена не дает определенный статус?</p>
+				</div>
+			</section>
+			<div class="index-content">
+				<div class="index-content-left">
+					<h2 class="index-content-title">Новости</h2>
+					<ul class="news-preview">
+						<li>
+							<p>Нам наконец завезли Ягермайстер! Теперь вы&nbspможете пропустить стаканчик во&nbspвремя стрижки</p>
+							<time datetime="2016-01-11">11 января</time>
+						</li>
+						<li>
+							<p>В&nbspнашей команде пополнение, борис "Бритва" Стригунец, обладатель множества титулов и&nbspнаград пополнил наши стройные ряды</p>
+							<time datetime="2016-09-19">19 сентября</time>
+						</li>
+					</ul>
+					<a class="btn" href="#">Все новости</a>
+				</div>
+				<div class="index-content-rigth">
+					<h2 class="index-content-title">Фотогалерея</h2>
+					<div class="gallery">
+						<figure class="gallery-content">
+							<img src="img/photo-1.jpg" width="286" height="164" alt="">
+						</figure>
+							<!-- Здась используются кнопки а не ссылки т.к. не предполагается перехода на другую страницу -->
+						<button class="btn gallery-prev">Назад</button>
+						<button class="btn gallery-next">Вперед</button>
+					</div>
+				</div>
+			</div>
+			<div class="index-content">
+				<div class="index-content-left">
+					<h2 class="index-content-title">Контактная информация</h2>
+					<p>
+						Барбершоп Бородинский<br>
+						Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
+						Телефон: +7 (812) 666-02-66
+					</p>
+					<p>
+						Время рабоы:<br>
+						пн - пт: c 10:00 до 22:00<br>
+						сб - вс: с 10:00 до 19:00
+					</p>
+					<a class="btn" href="#">Как проехать</a>
+					<a class="btn" href="#">Обратная связь</a>
+				</div>
+				<div class="index-content-right">
+						<h2 class="index-content-title">Записаться</h2>
+						<p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+						<form class="appointment-form" action="https://echo.htmlacademy.ru1" method="POST">
+							<input type="text" name="date" value="" placeholder="Дата">
+							<input type="text" name="time" value="" placeholder="Время">
+							<input type="text" name="name" value="" placeholder="Ваше имя">
+							<!-- Тип type="tel" нужно для мобильных. В этом случае в этом поле по умолчанию будет впоказываться цифровая клавиатура а не текстовая -->
+							<input type="tel" name="phone" value="" placeholder="Телефон">
+							<button class="btn" type="submit">Отправить</button>
+						</form>
+				</div>
+			</div>	
+		</main>
+		<!-- Подвал -->
+		<footer class="main-footer">
+			<!-- Добваили div для центровки (так же как и в шапке)-->
+			<div class="container">
+				<section class="footer-contacts">
+						Барбершоп Бородинский<br>
+						Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
+						<a href="#">Как нас найти?</a>
+						Телефон: +7 (812) 666-02-66
+				</section>
+				<section class="footer-social">
+					<p>Давайте дружить!</p>
+					<a class="social-btn social-btn-vk" href="#">Вконтакте</a>
+					<a class="social-btn social-btn-fb" href="#">Фейсбук</a>
+					<a class="social-btn social-btn-inst" href="#">Инстаграм</a>
+				</section>
+				<section class="footer-copyright">
+					<p>Разработано:</p>
+					<a class="btn" href="https://htmlacademy.ru1">HTML Academy</a>
+				</section>
+			</div>
+		</footer>
   </body>
 </html>
